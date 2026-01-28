@@ -21,22 +21,23 @@
             padding: 20px;
         }
 
+        /* CONFIGURAÇÃO DA PÁGINA */
         .cv-page {
             background-color: white;
             width: 850px;
-            min-height: 1100px;
+            height: 1120px; /* Altura fixa para A4 */
             display: flex;
             box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            overflow: hidden; /* Garante que nada escape */
         }
 
-        /* Coluna Principal (Esquerda) */
         .left-column {
             width: 65%;
-            padding: 40px 35px;
+            padding: 30px 35px; /* Reduzi levemente o padding superior */
         }
 
         .header h1 {
-            font-size: 32px;
+            font-size: 28px; /* Reduzi de 32px para ganhar espaço */
             color: #333;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -44,121 +45,114 @@
         }
 
         .header .job-title {
-            font-size: 18px;
+            font-size: 17px;
             color: var(--sub-title);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 8px;
-            font-size: 13px;
+            gap: 6px;
+            font-size: 12px;
             color: #555;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .section-header {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: bold;
             color: #444;
             text-transform: uppercase;
-            margin-top: 30px;
+            margin-top: 20px; /* Reduzi o espaçamento entre seções */
             border-bottom: 1.5px solid var(--sub-title);
-            padding-bottom: 5px;
-            margin-bottom: 15px;
+            padding-bottom: 4px;
+            margin-bottom: 12px;
         }
 
         .experience-item {
-            margin-bottom: 22px;
+            margin-bottom: 15px; /* Reduzi de 22px para 15px */
         }
 
         .exp-top {
             display: flex;
             justify-content: space-between;
             font-weight: bold;
-            font-size: 14px;
+            font-size: 13px;
             color: #333;
         }
 
         .exp-company {
             color: var(--sub-title);
             font-weight: bold;
-            font-size: 14px;
+            font-size: 13px;
             display: block;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .exp-details {
-            font-size: 13px;
+            font-size: 12px;
             color: #555;
             list-style-type: disc;
             margin-left: 18px;
-            line-height: 1.4;
+            line-height: 1.3;
         }
 
-        /* Coluna Lateral (Direita) */
+        /* COLUNA DIREITA */
         .right-column {
             width: 35%;
             background-color: var(--lateral-bar);
             color: white;
-            padding: 40px 25px;
+            padding: 30px 20px;
         }
 
         .profile-container {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 25px;
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 130px; /* Reduzi um pouco a foto */
+            height: 130px;
             border-radius: 50%;
-            border: 5px solid rgba(255,255,255,0.1);
+            border: 4px solid rgba(255,255,255,0.1);
             object-fit: cover;
         }
 
         .sidebar-section {
-            margin-bottom: 35px;
+            margin-bottom: 25px;
         }
 
         .sidebar-title {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: bold;
             text-transform: uppercase;
             border-bottom: 1px solid rgba(255,255,255,0.4);
-            padding-bottom: 6px;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
-        }
-
-        .sidebar-text {
-            font-size: 12px;
-            line-height: 1.6;
-            text-align: justify;
-            color: rgba(255,255,255,0.9);
-        }
-
-        .sidebar-list {
-            list-style: none;
-            font-size: 12px;
-            line-height: 1.5;
-        }
-
-        .sidebar-list li {
+            padding-bottom: 5px;
             margin-bottom: 10px;
         }
 
-        .sidebar-list strong {
-            display: block;
-            font-size: 13px;
-            margin-bottom: 2px;
-            color: white;
+        .sidebar-text, .sidebar-list {
+            font-size: 11.5px;
+            line-height: 1.5;
+            color: rgba(255,255,255,0.9);
         }
 
+        .sidebar-list li { margin-bottom: 8px; }
+
+        /* AJUSTES PARA IMPRESSÃO */
         @media print {
-            body { background-color: white; padding: 0; }
-            .cv-page { box-shadow: none; width: 100%; }
+            @page {
+                size: A4;
+                margin: 0; /* Remove margens do navegador */
+            }
+            body { background-color: white; padding: 0; margin: 0; }
+            .cv-page { 
+                box-shadow: none; 
+                width: 100%; 
+                height: 100vh; 
+                border: none;
+            }
         }
     </style>
 </head>
